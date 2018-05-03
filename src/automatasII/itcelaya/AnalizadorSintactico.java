@@ -22,7 +22,11 @@ public class AnalizadorSintactico {
         
         if(begin.aceptado){
             System.out.println("Se ha hecho bien el begin");
-            sintactico = true;
+            if(Settings.cadenaError.equals(""))
+            {
+                Interfaz.txtOutput.setText("\t --- Análisis Sintáctico Relizado Correctamente --");
+                sintactico = true;
+            }
         }
         return sintactico;
     }

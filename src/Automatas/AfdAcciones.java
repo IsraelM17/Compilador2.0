@@ -24,6 +24,8 @@ public class AfdAcciones {
     private boolean q0(int contador) {
         aceptado = false;
         if(contador < token.length)
+            if((Integer.parseInt(token[contador]))>50 && (Integer.parseInt(token[contador]))<100)
+                token[contador]="50";
             switch(token[contador]){
                 case "17"://int
                     Settings.afdDec.inicio(contador);
@@ -45,11 +47,16 @@ public class AfdAcciones {
                       Settings.afdOutput.inicio(contador);
                       aceptado = true;
                     break;
-                  case  "numero":
-                      //error
+                  case  "50":
+                      Settings.afAsg.inicio(contador);
+                      aceptado=true;
                       break;
+                case  "31":
+                    //Settings.afAsg.inicio(contador);
+                    //aceptado=true;
+                    break;
                   default:
-                      aceptado = true;
+                      //aceptado = true;
                       break;
             }
         return aceptado;

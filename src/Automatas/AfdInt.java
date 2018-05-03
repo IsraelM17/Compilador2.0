@@ -23,7 +23,7 @@ public class AfdInt {
         if(contador < token.length)
             if(token[contador].equals("17")){
                 Settings.contador++;
-                q1(contador + 1);
+                q1(Settings.contador);
             }
             else 
                Settings.e.qError(27);

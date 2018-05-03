@@ -30,7 +30,7 @@ public class AfdIdentificador {
     {
         aceptado = true;
         if(contador < caracter.length)
-            if (caracter[contador] == '_' ||(caracter[contador]>='a' && caracter[contador]<='z') || (caracter[contador]>='0' && caracter[contador]<='9'))
+            if (caracter[contador] == '_' ||(caracter[contador]>='a' && caracter[contador]<='z') || (caracter[contador]>='0' && caracter[contador]<='9') || (caracter[contador]>='A' && caracter[contador]<='Z'))
                 q1(contador + 1);
             else
                 q3(contador +1);

@@ -5,13 +5,7 @@
  */
 package automatasII.itcelaya;
 
-import Automatas.AfdAcciones;
-import Automatas.AfdChar;
-import Automatas.AfdCondicion;
-import Automatas.AfdInt;
-import Automatas.AfdIf;
-import Automatas.AfdOutput;
-import Automatas.AfdWhile;
+import Automatas.*;
 
 /**
  *
@@ -30,6 +24,7 @@ public class Settings {
     public static AfdCondicion afdCon   = new AfdCondicion();
     public static AfdChar afdChar       = new AfdChar();
     public static AfdIf  afdIf          = new AfdIf();
+    public static AfAsignacion afAsg    = new AfAsignacion();
     public static AfdInt afdDec = new AfdInt();
     public static AfdOutput afdOutput   = new AfdOutput();
     public static Errores e = new Errores();

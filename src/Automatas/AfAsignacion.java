@@ -5,6 +5,7 @@
  */
 package Automatas;
 import automatasII.itcelaya.Errores;
+import automatasII.itcelaya.Settings;
 
 /**
  *
@@ -12,26 +13,22 @@ import automatasII.itcelaya.Errores;
  */
 public class AfAsignacion {
 
-    Errores error = new Errores();
-    AfdAcciones ac = new AfdAcciones();
-    public int contador = 0;
     public boolean aceptado;
     public String[] token;
-    String cadena;
 
-    public void inicio(String cadena) {
-        this.cadena = cadena;
-        token = cadena.split(" ");
+    public void inicio(int contador) {
+        token = Settings.cadena.split(" ");
         q0(contador);
     }
 
     private boolean q0(int contador) {
         aceptado = false;
         if (contador < token.length) {
-            if (token[contador].equals("50")) {
-                q1(contador + 1);
+            if (Integer.parseInt(Settings.token[contador])>=50 && Integer.parseInt(Settings.token[contador])<=100) {
+                Settings.contador ++;
+                q1(Settings.contador);
             } else {
-                error.qError(22);
+                Settings.e.qError(1);
             }
         }
         return aceptado;
@@ -41,9 +38,10 @@ public class AfAsignacion {
         aceptado = false;
         if (contador < token.length) {
             if (token[contador].equals("31")) {
-                q2(contador + 1);
+                Settings.contador++;
+                q2(Settings.contador);
             } else {
-                error.qError(19);
+                Settings.e.qError(19);
             }
         }
         return aceptado;
@@ -52,19 +50,12 @@ public class AfAsignacion {
     private boolean q2(int contador) {
         aceptado = false;
         if (contador < token.length) {
-            if (token[contador].equals("50")) {
-                q3(contador + 1);
+            if (Integer.parseInt(Settings.token[contador])> 50) {
+                Settings.contador++;
+                q3(Settings.contador);
             } else {
-                if (token[contador].equals("100")) {
-                    q3(contador + 1);
-                } else {
-                    if (token[contador].equals("150")) {
-                        q3(contador + 1);
-                    } else {
-                        error.qError(14);
+                        Settings.e.qError(14);
                     }
-                }
-            }
         }
         return aceptado;
     }
@@ -75,7 +66,7 @@ public class AfAsignacion {
             if (token[contador].equals("11")) {
                 aceptado = true;
             } else {
-                error.qError(11);
+               // Settings.e.qError(11);
             }
         }
         return aceptado;

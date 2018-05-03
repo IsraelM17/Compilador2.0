@@ -17,9 +17,9 @@ public class AfdBegin {
    
    public void AfdBegin(String cadena)
     {
-        this.cadena=cadena;
+        this.cadena = cadena;
         token = Settings.cadena.split(" ");
-         q0(Settings.contador);
+        q0(Settings.contador);
     }
    
     //Se espera begin

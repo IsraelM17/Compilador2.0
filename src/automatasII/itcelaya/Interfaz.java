@@ -116,9 +116,9 @@ public class Interfaz extends JFrame implements ActionListener {
         btnCode         = new JButton("Guardar Código");
         btnLimpiar      = new JButton("Limpiar");
 
-        btnLexico.setBackground(Color.green);
+        btnLexico.setBackground(Color.yellow);
         btnSintactico.setBackground(Color.lightGray);
-        btnSintactico.setForeground(Color.white);
+        btnSintactico.setForeground(Color.black);
 
         btnLexico.addActionListener(this);
         btnSintactico.addActionListener(this);
@@ -181,23 +181,30 @@ public class Interfaz extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource() == btnLexico) {
+            Settings.cadenaError = "";
             txtOutput.setText("");
             OutPut = "";
             avanzarr = false;
             arrayList   = new ArrayList();
             codigo      = txtCode.getText();
             //Limpia la tabla de simbolos (Parte gráfica) cada vez que analizamos
-            for (int i = 0; i < tablaSimbolos.getRowCount(); i++) {
-                modeloTabla.removeRow(i);
-                i-=1;
-            }
+            try {
+                for (int i = 0; i < tablaSimbolos.getRowCount(); i++) {
+                    modeloTabla.removeRow(i);
+                    i -= 1;
+                }
 
-            try{
+                for (int i = 0; i< arrayList.size(); i++){
+                    arrayList.remove(i);
+                }
+
                 analizar();
-                if(avanzarr) {
+                if (avanzarr) {
                     btnSintactico.setEnabled(true);
-                    btnSintactico.setBackground(Color.green);
-                }else {
+                    btnSintactico.setBackground(Color.yellow);
+                    btnLexico.setBackground(Color.green);
+                } else {
+                    btnLexico.setBackground(Color.red);
                     btnSintactico.setEnabled(false);
                     btnSintactico.setBackground(Color.lightGray);
                 }
