@@ -6,7 +6,7 @@
 package Automatas;
 import automatasII.itcelaya.Errores;
 import automatasII.itcelaya.Settings;
-
+//HOla
 /**
  *
  * @author fernando
@@ -15,7 +15,7 @@ public class AfAsignacion {
 
     public boolean aceptado;
     public String[] token;
-
+int hola;
     public void inicio(int contador) {
         token = Settings.cadena.split(" ");
         q0(contador);

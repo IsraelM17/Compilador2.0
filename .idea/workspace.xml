@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bd222e8-040a-493b-b933-4196f37c7fff" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Archivos/CargaArchivo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Archivos/Delimitadores.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Archivos/Operadores.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Archivos/PalabrasReservadas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfAsignacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdAcciones.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdBegin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdCadena.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdChar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdCondicion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdDigito.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdIdentificador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdIf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdInt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdOutput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdPR.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/Automatas/AfdWhile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/automatasII/itcelaya/AnalizadorSintactico.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/automatasII/itcelaya/Errores.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/automatasII/itcelaya/Interfaz.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/automatasII/itcelaya/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/automatasII/itcelaya/Settings.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compilador2.0/automatasII/itcelaya/TablaSimbolosList.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Automatas/AfAsignacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Automatas/AfAsignacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Automatas/AfdAcciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Automatas/AfdAcciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Automatas/AfdBegin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Automatas/AfdBegin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automatasII/itcelaya/Interfaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automatasII/itcelaya/Interfaz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automatasII/itcelaya/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automatasII/itcelaya/Settings.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,11 +38,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AfdAcciones.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AfdAcciones.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Automatas/AfdAcciones.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-145">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AfAsignacion.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Automatas/AfAsignacion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -244,12 +227,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525147520564</updated>
-      <workItem from="1525388509294" duration="944000" />
+      <workItem from="1525388509294" duration="1166000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="944000" />
+    <option name="totallyTimeSpent" value="1166000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -264,12 +247,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33892617" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33892617" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.5067114" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.5067114" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21168438" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21168438" />
       <window_info anchor="right" id="Database" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -626,16 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Automatas/AfAsignacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="76" column="60" selection-start-line="76" selection-start-column="60" selection-end-line="76" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/automatasII/itcelaya/Interfaz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -660,6 +633,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-145">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Automatas/AfAsignacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
