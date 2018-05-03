@@ -21,7 +21,7 @@ public class AnalizadorSintactico {
         begin.AfdBegin(cadena); //Se envía la cadena de ID's al primer automata BEGIN
         
         if(begin.aceptado){
-            System.out.println("Se ha hecho bien el begin PUTO");
+            System.out.println("Se ha hecho bien el begin");
             sintactico = true;
         }
         return sintactico;

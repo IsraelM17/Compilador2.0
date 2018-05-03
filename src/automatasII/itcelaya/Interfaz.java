@@ -1,6 +1,7 @@
 package automatasII.itcelaya;
 
 import javax.swing.*;
+import javax.swing.plaf.synth.ColorType;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -38,7 +39,7 @@ public class Interfaz extends JFrame implements ActionListener {
     JScrollPane         spTabla;
 
     CargaArchivo c= new CargaArchivo();
-    public static boolean avanzar=true;
+    public static boolean avanzarr = false;
     /**
      * Objeto array list para guardar en la tabla de simbolos
      */
@@ -104,7 +105,7 @@ public class Interfaz extends JFrame implements ActionListener {
     {
         JPanel panelSuperior = new JPanel();
         panelSuperior.setLayout(new FlowLayout(10));
-        panelSuperior.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        panelSuperior.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
         panelSuperior.setBackground(Color.white);
 
         JPanel panelSuperior11 = new JPanel();
@@ -123,6 +124,8 @@ public class Interfaz extends JFrame implements ActionListener {
         btnSintactico.addActionListener(this);
         btnCode.addActionListener(this);
         btnLimpiar.addActionListener(this);
+
+        btnSintactico.setEnabled(false);
 
         panelSuperior11.add(btnLexico);
         panelSuperior11.add(btnSintactico);
@@ -167,6 +170,7 @@ public class Interfaz extends JFrame implements ActionListener {
         spOutput    = new JScrollPane(txtOutput);
         spOutput.setVerticalScrollBarPolicy ( ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS );
 
+        txtOutput.setForeground(Color.red);
         txtOutput.setEditable(false);
 
         panelInferior.add(spOutput);
@@ -177,36 +181,46 @@ public class Interfaz extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource() == btnLexico) {
+            txtOutput.setText("");
+            OutPut = "";
+            avanzarr = false;
             arrayList   = new ArrayList();
             codigo      = txtCode.getText();
-
             //Limpia la tabla de simbolos (Parte gráfica) cada vez que analizamos
             for (int i = 0; i < tablaSimbolos.getRowCount(); i++) {
                 modeloTabla.removeRow(i);
                 i-=1;
             }
 
-            txtOutput.setText("");
             try{
                 analizar();
+                if(avanzarr) {
+                    btnSintactico.setEnabled(true);
+                    btnSintactico.setBackground(Color.green);
+                }else {
+                    btnSintactico.setEnabled(false);
+                    btnSintactico.setBackground(Color.lightGray);
+                }
             }catch(Exception ex){
                 ex.printStackTrace();
             }
         }
         else if (e.getSource() == btnSintactico){
             Settings.contador = 0;
-            if (avanzar==true){
-                getDatosTabla();
-                mostrarError();
-            }
-            else {
-                // System.out.println("Hay errores léxicos");
-                JOptionPane.showMessageDialog(null,"NO PUEDE CONTINUAR PORQUE HAY ERRORES LÉXICOS");
+            Settings.cadena = "";
+            Settings.cadenaError = "";
 
-            }
+            getDatosTabla();
+            JOptionPane.showMessageDialog(null, "Analisis Sintáctico Completo");
+            mostrarError();
         }
         else if (e.getSource() == btnLimpiar){
-
+            txtCode.setText("");
+            txtOutput.setText("");
+            for (int i = 0; i < tablaSimbolos.getRowCount(); i++) {
+                modeloTabla.removeRow(i);
+                i-=1;
+            }
         }
         else if (e.getSource() == menuAbrir){
             /**
@@ -224,6 +238,7 @@ public class Interfaz extends JFrame implements ActionListener {
                 ex.printStackTrace();
             }
         }
+        else if (e.getSource() == btnCode ){}
     }
 
     /**
@@ -260,7 +275,7 @@ public class Interfaz extends JFrame implements ActionListener {
             }
             //si se encuentra un # no toma en cuenta nada
             else  if(Character.toString(codigo.charAt(i)).equals("#")){
-                i++;
+                //i++;
                 while(Character.toString(codigo.charAt(i)).compareTo("\n") != 0)
                     i ++;
                 linea += 1;
@@ -275,7 +290,9 @@ public class Interfaz extends JFrame implements ActionListener {
             i++;
         }while(i <= codigo.length());
         JOptionPane.showMessageDialog(null,"Análisis Léxico completo");
-        txtOutput.setText("---Análisis completado--- \n");
+        txtOutput.setText(OutPut);
+        if(txtOutput.getText().equals(""))
+            avanzarr = true;
     }
 
     private void analizarToken(String token, int linea){
@@ -319,17 +336,6 @@ public class Interfaz extends JFrame implements ActionListener {
         else if(token.compareTo("")!=0){
             OutPut += "Error 69 en linea "+linea+":"+token+" no esta en el lenguaje\n";
             linea += 1;
-            avanzar=false;
-        }
-        if(avanzar)
-        {
-            btnSintactico.setEnabled(true);
-            btnSintactico.setBackground(Color.green);
-        }
-        else
-        {
-            btnSintactico.setEnabled(false);
-            btnSintactico.setBackground(Color.yellow);
         }
 
     }
