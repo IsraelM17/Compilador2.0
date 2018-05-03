@@ -18,6 +18,7 @@ public class Settings {
     public static String cadenaError = "";
     public static String cadena = "";
     public static String token[];
+    public static int longitudcadena;
 
     public static AfdAcciones  ac       = new AfdAcciones();
     public static AfdWhile aw           = new AfdWhile();
@@ -28,5 +29,5 @@ public class Settings {
     public static AfdInt afdDec = new AfdInt();
     public static AfdOutput afdOutput   = new AfdOutput();
     public static Errores e = new Errores();
-    
+
 }

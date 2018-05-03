@@ -181,29 +181,24 @@ public class Interfaz extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource() == btnLexico) {
-            Settings.cadenaError = "";
             txtOutput.setText("");
             OutPut = "";
             avanzarr = false;
             arrayList   = new ArrayList();
-            codigo      = txtCode.getText();
+            codigo      = txtCode.getText().toLowerCase();
             //Limpia la tabla de simbolos (Parte gráfica) cada vez que analizamos
-            try {
-                for (int i = 0; i < tablaSimbolos.getRowCount(); i++) {
-                    modeloTabla.removeRow(i);
-                    i -= 1;
-                }
+            for (int i = 0; i < tablaSimbolos.getRowCount(); i++) {
+                modeloTabla.removeRow(i);
+                i-=1;
+            }
 
-                for (int i = 0; i< arrayList.size(); i++){
-                    arrayList.remove(i);
-                }
-
+            try{
                 analizar();
-                if (avanzarr) {
+                if(avanzarr) {
                     btnSintactico.setEnabled(true);
                     btnSintactico.setBackground(Color.yellow);
                     btnLexico.setBackground(Color.green);
-                } else {
+                }else {
                     btnLexico.setBackground(Color.red);
                     btnSintactico.setEnabled(false);
                     btnSintactico.setBackground(Color.lightGray);
@@ -218,8 +213,9 @@ public class Interfaz extends JFrame implements ActionListener {
             Settings.cadenaError = "";
 
             getDatosTabla();
-            JOptionPane.showMessageDialog(null, "Analisis Sintáctico Completo");
             mostrarError();
+            JOptionPane.showMessageDialog(null, "Analisis Sintáctico Completo");
+
         }
         else if (e.getSource() == btnLimpiar){
             txtCode.setText("");
@@ -254,7 +250,7 @@ public class Interfaz extends JFrame implements ActionListener {
 
     private void analizar()throws Exception {
 
-        codigo  =  txtCode.getText();
+        codigo  =  txtCode.getText().toLowerCase();
         token    = "";
 
         int i           = 0;
@@ -309,6 +305,7 @@ public class Interfaz extends JFrame implements ActionListener {
         //cadena  = new AfdCadena(token);
 
         //Primero buscamos si el token analizado se encuentra en nuestro archivo de PalabrasReservadas
+        System.out.println(token);
         if (pr.analizar(token))
         {
             meterDatosTabla(pr.valor,token,"PR","--", linea);
@@ -374,7 +371,8 @@ public class Interfaz extends JFrame implements ActionListener {
             String value = tablaSimbolos.getValueAt(r,Col).toString();
             Settings.cadena += value+" ";
         }
-
+        Settings.longitudcadena = Settings.cadena.length();
+        System.out.println(Settings.longitudcadena);
         Settings.token = Settings.cadena.split(" ");
         System.out.println(Settings.cadena);
 

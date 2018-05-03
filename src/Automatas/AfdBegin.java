@@ -8,20 +8,20 @@ import automatasII.itcelaya.Settings;
  * @author Lau Rodríguez
  */
 public class AfdBegin {
-    
-   Errores error = new Errores();
-   //public static int    contador = 0;
-   public boolean       aceptado;
-   public String[]      token;
-   String               cadena;
-   
-   public void AfdBegin(String cadena)
+
+    Errores error = new Errores();
+    //public static int    contador = 0;
+    public boolean       aceptado;
+    public String[]      token;
+    String               cadena;
+
+    public void AfdBegin(String cadena)
     {
         this.cadena = cadena;
         token = Settings.cadena.split(" ");
         q0(Settings.contador);
     }
-   
+
     //Se espera begin
     private boolean q0(int contador) {
         aceptado = false;
@@ -30,12 +30,12 @@ public class AfdBegin {
                 Settings.contador += 1;
                 q1(Settings.contador);
             }
-            else 
+            else
                 error.qError(22);
         return aceptado;
     }
- 
-    //Se espera main 
+
+    //Se espera main
     private boolean q1(int contador)
     {
         aceptado = false;
@@ -48,8 +48,8 @@ public class AfdBegin {
                 error.qError(24);
         return aceptado;
     }
-    
-    //Se espera ( 
+
+    //Se espera (
     private boolean q2(int contador)
     {
         aceptado = false;
@@ -62,8 +62,8 @@ public class AfdBegin {
                 error.qError(11);
         return aceptado;
     }
-    
-    //Se espera ) 
+
+    //Se espera )
     private boolean q3(int contador)
     {
         aceptado = false;
@@ -76,7 +76,7 @@ public class AfdBegin {
                 error.qError(15);
         return aceptado;
     }
-    
+
     //Se espera {
     private boolean q4(int contador)
     {
@@ -90,38 +90,40 @@ public class AfdBegin {
                 error.qError(16);
         return aceptado;
     }
-    
+
     //Se espera } ó codigo
     private boolean q5(int contador)
     {
         aceptado = false;
         if(contador < token.length)
             if(!token[Settings.contador].equals("13")){
-                Settings.ac.inicio(contador);
+                Settings.ac.inicio(Settings.contador);
                 Settings.contador++;
                 q5(Settings.contador);
-            } 
-            else 
+            }
+            else
                 q12(Settings.contador);
-        else 
+        else
             error.qError(17);
         return aceptado;
     }
-    
+
     //Se espera }
     private boolean q12(int contador)
     {
         aceptado = false;
-        if(Settings.contador < token.length)
+        System.out.println();
+        if(Settings.contador < token.length){
             if(token[Settings.contador].equals("13")){
                 Settings.contador += 1;
                 q13(Settings.contador);
             }
             else
                 error.qError(17);
+        }
         return aceptado;
     }
-    
+
     //Se espera end
     private boolean q13(int contador)
     {
@@ -137,6 +139,6 @@ public class AfdBegin {
                 error.qError(23);
         return aceptado;
     }
-    
-    
+
+
 }

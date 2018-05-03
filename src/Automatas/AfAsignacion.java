@@ -28,6 +28,7 @@ public class AfAsignacion {
                 Settings.contador ++;
                 q1(Settings.contador);
             } else {
+                Settings.contador=Settings.longitudcadena-1;
                 Settings.e.qError(1);
             }
         }
@@ -41,6 +42,7 @@ public class AfAsignacion {
                 Settings.contador++;
                 q2(Settings.contador);
             } else {
+                Settings.contador=Settings.longitudcadena-1;
                 Settings.e.qError(19);
             }
         }
@@ -54,22 +56,49 @@ public class AfAsignacion {
                 Settings.contador++;
                 q3(Settings.contador);
             } else {
-                        Settings.e.qError(14);
-                    }
+                if(Settings.token[contador].equals("10")){
+                    Settings.contador++;
+                    q4(Settings.contador);
+                }else
+                    Settings.contador=Settings.longitudcadena-1;
+                    Settings.e.qError(14);
+            }
         }
         return aceptado;
     }
 
     private boolean q3(int contador) {
         aceptado = false;
+        System.out.println(contador +" "+token.length);
         if (contador < token.length) {
             if (token[contador].equals("11")) {
                 aceptado = true;
             } else {
-               // Settings.e.qError(11);
+                Settings.contador=Settings.longitudcadena-1;
+                 Settings.e.qError(11);
             }
         }
         return aceptado;
     }
+
+    private boolean q4(int contador) {
+        aceptado = false;
+        if (contador < token.length) {
+            if (!token[contador].equals("10")) {
+                Settings.contador++;
+                q4(Settings.contador);
+                if(token[contador].equals("11")){
+                    Settings.contador=Settings.longitudcadena-1;
+                    Settings.e.qError(9);
+                    q3(Settings.contador);
+                }
+            } else {
+                Settings.contador++;
+                q3(Settings.contador);
+            }
+        }
+        return aceptado;
+    }
+
 
 }
